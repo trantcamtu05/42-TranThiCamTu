@@ -18,19 +18,14 @@ def print_student_list():
             print(f" - Ten: {s['name']}, Nam sinh: {s['year_of_birth']}, Dia chi: {s['address']}")
 
 def search_student(search_name):
-    """
-    YÊU CẦU 3: Hoàn thiện hàm này.
-    - In ra tiêu đề "--- KET QUA TIM KIEM ---".
-    - Tìm kiếm trong `student_list` tất cả các sinh viên có tên (không phân biệt hoa thường)
-      chứa `search_name`.
-    - In ra thông tin của các sinh viên tìm thấy (theo định dạng như hàm print_student_list).
-    - Nếu không tìm thấy, in ra "Khong tim thay sinh vien nao.".
-    """
-    ### VIẾT CODE CỦA BẠN VÀO ĐÂY ###
-    pass # Xóa dòng này khi bạn viết code
-
-# --- Phần thực thi chính để kiểm tra ---
-# Sinh viên không cần chỉnh sửa phần này.
+    print("--- KET QUA TIM KIEM ---")
+    found_students = [s for s in student_list if search_name.lower() in s["name"].lower()]
+    if not found_students:
+        print("Khong tim thay sinh vien nao.")
+    else:
+        for s in found_students:
+            print(f" - Ten: {s['name']}, Nam sinh: {s['year_of_birth']}, Dia chi: {s['address']}")
+            
 if __name__ == "__main__":
     print("--- CHUONG TRINH QUAN LY SINH VIEN ---")
     
